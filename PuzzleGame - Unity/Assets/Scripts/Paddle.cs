@@ -11,8 +11,9 @@ using UnityEngine;
 
 public class Paddle : MonoBehaviour
 {
-
     public float speed;
+    public float xMin;
+    public float xMax;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class Paddle : MonoBehaviour
         {
             Vector3 pos = transform.position;
             pos.x += x * Time.deltaTime * speed;
+            pos.x = Mathf.Clamp(pos.x,xMin,xMax); // restrict paddle movement, make sure that it is moving between two walls
             transform.position = pos;
 
         }
