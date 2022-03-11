@@ -24,6 +24,10 @@ public class Paddle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (RandomColor.instance.isPassedLevel)
+        {
+            return;
+        }
         float x = Input.GetAxis("Horizontal"); // horizontal movement
         if (x != 0)
         {

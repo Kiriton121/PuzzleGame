@@ -28,6 +28,10 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (RandomColor.instance.isPassedLevel)
+        {
+            return;
+        }
         if (Input.GetMouseButtonDown (0) && !RandomColor.instance.isPlaying)
         {
             Vector3 NormalizedSpeed = new Vector3(1f, 1f, 0).normalized;
